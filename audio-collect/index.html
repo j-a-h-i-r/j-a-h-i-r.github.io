@@ -1,0 +1,308 @@
+<html>
+<!--https://gersonrosales.github.io/Record-Audios-and-Videos-with-getUserMedia/example_1.html-->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-storage.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAezyjBd0E0oLtFBlfhrSYPzkx7gySr5rw",
+            authDomain: "audio-collect.firebaseapp.com",
+            databaseURL: "https://audio-collect.firebaseio.com",
+            projectId: "audio-collect",
+            storageBucket: "audio-collect.appspot.com",
+            messagingSenderId: "1005805513369"
+        };
+
+        firebase.initializeApp(config);
+        const database = firebase.database();
+        const storage = firebase.storage();
+        const firestore = firebase.firestore();
+
+        const settings = { timestampsInSnapshots: true };
+        firestore.settings(settings);
+
+        var file = "";
+
+        // object to hold data to be uploaded
+        var uploadData = {};
+        var uploadDataCounter = 0;
+    </script>
+
+    <script src="recorder.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <p style="text-align:center">Select One of These Words</p>
+    <div id="wordCountContainer">
+        <table id="wordCountTable">
+            <tr>
+                <th>Word</th>
+                <th>Count</th>
+                <th>Select</th>
+            </tr>
+        </table>
+    </div>
+    <p style="text-align: center;"> Or Record New Word </p>
+    <input type="text" id="inputText">
+    <br>
+    <!--
+    <img src="mic.svg" id="mic2" alt="Start Recording" class="center" onclick="start()">
+-->
+    <p id="mic" class="test" onclick="start()">REC</p>
+
+
+    Duration:
+    <input type="number" id="time" value="1" style="display: block;"> Seconds
+
+    <div id="audioContainer">
+
+    </div>
+    <br>
+
+    <button id="submit" onclick="submitAll()">SubmitAll</button>
+    <button id="get" onclick="getData()">Get</button>
+</body>
+
+<script>
+    //const nameField = document.getElementById("word");
+    //let filename = nameField.value + "/" + "3.wav";
+    function submitOne(submitButton) {
+        let div = submitButton.parentElement;
+        //console.log(submitButton);
+        //console.log(div);
+        let index = parseInt(submitButton.value, 10);
+
+        let uploadObj = uploadData[index];
+
+        console.log(uploadObj);
+
+        if (uploadObj === undefined) {
+            return;
+        }
+        let word = uploadObj["word"];
+
+        // steps:
+        // 1. Upload to firestore and get the key
+        // 2. Upload to storage using the key to avoid duplicates
+        firestore.collection("words").doc(word).collection("data").add({
+            link: "",
+            tag: "",
+            duration: uploadObj["duration"]
+        }).then(function (docRef) {
+            // Info added to firestore
+            // get the id and upload file to storage
+            let filepath = word + "/" + docRef.id + ".wav";
+            storage.ref(filepath).put(uploadObj["fileBlob"]).then(function (snapshot) {
+                // file upload has started
+                console.log("Uploading Files");
+                //console.log(snapshot);
+                // get download link
+                storage.ref(filepath).getDownloadURL().then(function (downloadURL) {
+                    // got Donwload URL
+                    // Update link in collection
+                    console.log(downloadURL);
+                    console.log(docRef.id);
+                    firestore.collection("words").doc(word).collection("data").doc(docRef.id).update({
+                        link: downloadURL
+                    }).then(function () {
+                        console.log("Updated downlaod link");
+                        // successfully uupdated
+                    }).catch(function (error) {
+                        console.log("Error Updating Link");
+                        console.log(error);
+                    })
+                })
+            });
+
+            // Update the count
+            firestore.collection("wordCount").doc(word).get().then(function (doc) {
+                //console.log("Inside counter update");
+                if (doc.exists) {
+                    console.log("document exists");
+                    let newCount = doc.data()["count"] + 1;
+                    firestore.collection("wordCount").doc(word).update({
+                        count: newCount
+                    }).then(function () {
+                        console.log("Updated Count of " + doc.id);
+                    })
+                }
+                else {
+                    console.log("document doesnot exist");
+                    firestore.collection("wordCount").doc(word).set({
+                        count: 1
+                    }).then(function () {
+                        console.log("added count for new word");
+                    }).then(function (eror) {
+                        console.log("error adding count of new item");
+                        console.log(error);
+                    })
+                }
+            });
+        }).catch(function (error) {
+            console.log(error);
+        });
+
+
+        uploadData[index] = undefined;
+    }
+    function submitAll() {
+        let audioDiv = document.getElementById("audioContainer");
+        let audioControlDiv = audioDiv.children;
+
+        for (let idx in audioControlDiv) {
+            let div = audioControlDiv[idx];
+            let btn = div.getElementsByClassName("submitOne")[0];
+            console.log(div);
+            submitOne(btn);
+        }
+    }
+
+
+    function getData() {
+        var ref = database.ref(nameField.value);
+        ref.once("value").then(function (snapshot) {
+            console.log(snapshot.val());
+        });
+
+    }
+
+    function select(wordClicked) {
+        if (wordClicked.length > 0) {
+            let input = document.getElementById("inputText");
+            input.value = wordClicked;
+        }
+    }
+
+    function loadWordCount() {
+        // load word count and display 
+
+        // get reference to wordcount
+        let ref = firestore.collection("wordCount");
+        ref.orderBy("count", "asc").limit(5).get().then(function (snapshot) {
+            // populate a table on div
+            let table = document.getElementById("wordCountTable");
+            //let counter = snapshot.val();
+            //console.log(snapshot);
+
+            snapshot.forEach(function (doc) {
+                //console.log(doc);
+                //console.log(doc.id);
+                //console.log(doc.data());
+
+                var row = document.createElement("tr");
+                var data1 = document.createElement("td");
+                var data2 = document.createElement("td");
+                var selectButton = document.createElement("button");
+                selectButton.appendChild(document.createTextNode("Select"));
+                selectButton.setAttribute("value", doc.id);
+                selectButton.setAttribute("onclick", "select(this.value)");
+                selectButton.setAttribute("class", "selectButton");
+
+                data1.appendChild(document.createTextNode(doc.id));
+                data2.appendChild(document.createTextNode(doc.data()["count"]));
+                row.appendChild(data1);
+                row.appendChild(data2);
+                row.appendChild(selectButton);
+
+                table.appendChild(row);
+            });
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+    loadWordCount();
+</script>
+<script>
+    function getInputWord() {
+        let inputWord = document.getElementById("inputText").value;
+        return inputWord;
+    }
+
+    function start() {
+        var getAudio = navigator.mediaDevices.getUserMedia({ audio: true });
+        let inputWord = getInputWord();
+
+        getAudio.then(function (stream) {
+            const context = new AudioContext();
+            const mediaStreamSource = context.createMediaStreamSource(stream);
+            const recorder = new Recorder(mediaStreamSource);
+            recorder.record();
+
+            let duration = document.getElementById("time").value * 1000;
+            console.log(duration);
+            setTimeout(function () {
+                recorder.stop();
+                //console.log(recorder);
+                stream.getTracks().forEach(track => track.stop());
+                recorder.exportWAV(function (rawAudio) {
+                    //file = r;
+
+                    // add this audio to the audio container for playback
+                    addToAudioContainer(inputWord, duration, rawAudio);
+                })
+            }, duration);
+        });
+    }
+    function addToAudioContainer(inputWord, wordDuration, audioFile) {
+        console.log("adding audio playback");
+        // create object URL
+        let audioLink = URL.createObjectURL(audioFile);
+
+        // getting and creating div
+        let container = document.getElementById("audioContainer");
+        let audioDiv = document.createElement("div");
+
+        // creating audio control
+        let player = document.createElement("audio");
+        player.setAttribute("controls", "");
+        player.setAttribute("src", audioLink);
+
+        // created nodes to describe the audio
+        let wordNode = document.createElement("p");
+        wordNode.className = "word";
+        let word = document.createTextNode(inputWord);
+        wordNode.appendChild(word);
+
+        let durationNode = document.createElement("p");
+        durationNode.className = "duration";
+        let duration = document.createTextNode(wordDuration);
+        durationNode.appendChild(duration);
+
+        // store the actual audio file in a hidden object element
+        let objectNode = document.createElement("object");
+        objectNode.data = audioFile;
+        objectNode.setAttribute("hidden", "");
+
+        // create a submit button to submit individual audio
+        let submitButton = document.createElement("button");
+        submitButton.innerHTML = "Click";
+        submitButton.className = "submitOne";
+        submitButton.id = "submitOne-" + uploadDataCounter;
+        submitButton.value = uploadDataCounter;
+        submitButton.setAttribute("onclick", "submitOne(this)");
+
+        audioDiv.appendChild(player);
+        audioDiv.appendChild(wordNode);
+        audioDiv.appendChild(durationNode);
+        audioDiv.appendChild(submitButton);
+
+        container.appendChild(audioDiv);
+
+        // Now add the necessary data to upload object
+        let data = {
+            word: inputWord,
+            duration: wordDuration,
+            fileBlob: audioFile
+        }
+        uploadData[uploadDataCounter] = data;
+        uploadDataCounter += 1;
+    }
+</script>
+
+</html>
