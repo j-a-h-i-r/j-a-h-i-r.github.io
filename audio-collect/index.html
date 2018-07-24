@@ -152,14 +152,16 @@
 
         uploadData[index] = undefined;
     }
+
     function submitAll() {
         let audioDiv = document.getElementById("audioContainer");
         let audioControlDiv = audioDiv.children;
+        console.log(audioControlDiv);
 
-        for (let idx in audioControlDiv) {
+        for (let idx=0; idx<audioControlDiv.length; idx++) {
             let div = audioControlDiv[idx];
+            //console.log(idx, div);
             let btn = div.getElementsByClassName("submitOne")[0];
-            console.log(div);
             submitOne(btn);
         }
     }
