@@ -57,16 +57,17 @@
     <p id="mic" class="test" onclick="start()">REC</p>
 
 
-    Duration:
-    <input type="number" id="time" value="1" style="display: block;"> Seconds
+    <p id="durationText">Duration (Seconds)</p>
+    <input type="number" id="time" value="1">
+    <br>
+
+    <button id="submit" onclick="submitAll()">Submit All</button>
+    <button id="get" onclick="getData()">Get</button>
 
     <div id="audioContainer">
 
     </div>
     <br>
-
-    <button id="submit" onclick="submitAll()">SubmitAll</button>
-    <button id="get" onclick="getData()">Get</button>
 </body>
 
 <script>
@@ -257,6 +258,7 @@
         // getting and creating div
         let container = document.getElementById("audioContainer");
         let audioDiv = document.createElement("div");
+        audioDiv.className = "audioContainerRow"
 
         // creating audio control
         let player = document.createElement("audio");
@@ -281,7 +283,7 @@
 
         // create a submit button to submit individual audio
         let submitButton = document.createElement("button");
-        submitButton.innerHTML = "Click";
+        submitButton.innerHTML = "Submit";
         submitButton.className = "submitOne";
         submitButton.id = "submitOne-" + uploadDataCounter;
         submitButton.value = uploadDataCounter;
