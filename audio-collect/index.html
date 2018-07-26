@@ -89,6 +89,7 @@
         let uploadObj = uploadData[index];
 
         console.log(uploadObj);
+        console.log(index);
 
         if (uploadObj === undefined) {
             return;
@@ -101,7 +102,8 @@
         firestore.collection("words").doc(word).collection("data").add({
             link: "",
             tag: "",
-            duration: uploadObj["duration"]
+            actualDuration: uploadObj["actualDuration"],
+            supposedDuration: uploadObj["supposedDuration"]
         }).then(function (docRef) {
             // Info added to firestore
             // get the id and upload file to storage
@@ -173,8 +175,10 @@
         for (let idx=0; idx<audioControlDiv.length; idx++) {
             let div = audioControlDiv[idx];
             //console.log(idx, div);
-            let btn = div.getElementsByClassName("submitOne")[0];
-            submitOne(btn);
+            if (div.className === "audioContainerRow") {
+                let btn = div.getElementsByClassName("submitOne")[0];
+                submitOne(btn);
+            }
         }
     }
 
@@ -261,7 +265,7 @@
                     // add this audio to the audio container for playback
                     addToAudioContainer(inputWord, duration, rawAudio);
                 })
-            }, duration);
+            }, duration + 150); // timeout is not entirely accurate
         });
     }
     function initializeAudioContainer() {
@@ -323,9 +327,9 @@
         durationNode.appendChild(duration);
 
         // store the actual audio file in a hidden object element
-        let objectNode = document.createElement("object");
-        objectNode.data = audioFile;
-        objectNode.setAttribute("hidden", "");
+        //let objectNode = document.createElement("object");
+        //objectNode.data = audioFile;
+        //objectNode.setAttribute("hidden", "");
 
         // create a submit button to submit individual audio
         let submitButton = document.createElement("button");
@@ -342,13 +346,27 @@
 
         container.appendChild(audioDiv);
 
-        // Now add the necessary data to upload object
-        let data = {
-            word: inputWord,
-            duration: wordDuration,
-            fileBlob: audioFile
-        }
-        uploadData[uploadDataCounter] = data;
+        (function (word, supDuration, file, counter) {
+            // wrapping the event listener in a function to get actual audio duration of the recorded word
+            console.log(word);
+            console.log(supDuration);
+            console.log(counter);
+            player.addEventListener("loadedmetadata", function(event) {
+                // get actual duration in Milliseconds
+                let recordedDuration = event.target.duration * 1000;
+                console.log(recordedDuration);
+                let data = {
+                    word: word,
+                    supposedDuration: supDuration,
+                    actualDuration: recordedDuration,
+                    fileBlob: file
+                }
+                uploadData[counter] = data;
+            });
+        }) (inputWord, wordDuration, audioFile, uploadDataCounter);
+
+        // always increment. otherwise two data might have same index
+        // but some index may be skipped. not much problem in this case
         uploadDataCounter += 1;
     }
 </script>
