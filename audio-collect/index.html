@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <p style="text-align:center">Select One of These Words</p>
+    <p style="text-align:center; font-size: 1.2em">Select One of These Words</p>
     <div id="wordCountContainer">
         <table id="wordCountTable">
             <tr>
@@ -48,12 +48,16 @@
             </tr>
         </table>
     </div>
-    <p style="text-align: center;"> Or Record New Word </p>
-    <input type="text" id="inputText">
+
+    <p style="text-align: center; font-size: 1.2em"> Selected Word </p>
+    <input type="text" id="inputText" style="width: 70%; display: block; margin-left: auto; margin-right: auto;" disabled>
     <br>
     <!--
     <img src="mic.svg" id="mic2" alt="Start Recording" class="center" onclick="start()">
 -->
+
+    <br>
+    <p style="text-align: center; text-decoration-line: underline; font-size: 1.2em">Record the Word</p>
     <p id="mic" class="test" onclick="start()">REC</p>
 
 
@@ -61,8 +65,12 @@
     <input type="number" id="time" value="1">
     <br>
 
+    <br>
     <button id="submit" onclick="submitAll()">Submit All</button>
+    <br> 
+    <!--
     <button id="get" onclick="getData()">Get</button>
+    -->
 
     <div id="audioContainer">
 
@@ -150,6 +158,11 @@
 
 
         uploadData[index] = undefined;
+        
+        let parent = div.parentElement;
+        setTimeout(() => {
+            parent.removeChild(div);
+        }, 250);
     }
 
     function submitAll() {
@@ -251,7 +264,39 @@
             }, duration);
         });
     }
+    function initializeAudioContainer() {
+        // show the submit all button
+        let submitAllBtn = document.getElementById("submit");
+        submitAllBtn.style.display = "block";
+
+
+        let container = document.getElementById("audioContainer");
+        let headerDiv = document.createElement("div");
+        headerDiv.className = "audioContainerHeader";
+        
+        let playerHeader = document.createElement("p");
+        playerHeader.innerHTML = "Player";
+
+        let wordHeader = document.createElement("p");
+        wordHeader.innerHTML = "Word";
+
+        let durationHeader = document.createElement("p");
+        durationHeader.innerHTML = "Duration";
+
+        let actionHeader = document.createElement("p");
+        actionHeader.innerHTML = "Action";
+        
+
+        headerDiv.appendChild(playerHeader);
+        headerDiv.appendChild(wordHeader);
+        headerDiv.appendChild(durationHeader);
+        headerDiv.appendChild(actionHeader);
+        container.appendChild(headerDiv);
+    }
     function addToAudioContainer(inputWord, wordDuration, audioFile) {
+        if (uploadDataCounter === 0) {
+            initializeAudioContainer();
+        }
         console.log("adding audio playback");
         // create object URL
         let audioLink = URL.createObjectURL(audioFile);
