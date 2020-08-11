@@ -8,13 +8,13 @@ description: A placeholder for me on the interwebs
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/images/fr_540.jpg
+picture: assets/images/fr_540_sq.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/file/d/1bLxfP7zGuMxyPkMQpQSW8jcyoOcgLYyG/view?usp=sharing
 
 url: https://jahir.me
 # your url: https://USERNAME.github.io
