@@ -4,11 +4,11 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>
-I am Jahirul Islam. I am currently a Software Engineer at Fiftywo Digital Ltd. Before that I was a Software Engineer at Enosis Solutions.
+<p>I am Jahirul Islam. I am currently a Software Engineer at Fiftywo Digital Ltd. Before that I was a Software Engineer at Enosis Solutions.</p>
 	
-I graduated from East West University in Computer Science & Engineering.
-</p>
+<p>I graduated from East West University in Computer Science & Engineering.</p>
+
+<p>This page will gradually get updated (hopefully) with new contents </p>
 
 <h2>Skills</h2>
 
