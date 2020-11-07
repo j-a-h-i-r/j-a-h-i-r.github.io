@@ -73,6 +73,8 @@
         const doText = task.do;
         const taskText = task.task;
 
+        if (!spanDo || !spanTask) return;
+
         const doPromise =  modifyText(spanDo, doText, true);
         const taskPromise = modifyText(spanTask, taskText, true);
 
