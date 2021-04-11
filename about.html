@@ -7,7 +7,7 @@ layout: page
 </p>
 
 <p>
-	I am Jahirul Islam. I am currently a Software Engineer at Fiftywo Digital Ltd. Before that I was a Software Engineer
+	I am Jahirul Islam, currently working as a Software Engineer at Fiftywo Digital Ltd. Before that I was a Software Engineer
 	at Enosis Solutions.
 </p>
 
@@ -17,19 +17,14 @@ layout: page
 
 <h2>Skills</h2>
 
+<p class="subheading" style="margin-bottom: 5px;">From most familiar to the least, sort of ..</p>
+
 <div class="skill-list" id="skill-list">
 	{% for skill in site.data.skills %}
-		<div class="one-skill" onclick="oneSkillClicked(event)">
-			<span class="skill-title"> {{skill.title}} </span>
-		</div>
-
-		<div style="position: relative; width: 0; height: 0">
-			<span class="skill-description"> {{skill.description}} </span>
-			<!-- <div style="position: absolute; left: 100px; top: 100px">
-					Hi there, I'm 100px offset from where I ought to be, from the top and left.
-			</div> -->
-		</div>
-
+		<button class="skill-title"> {{skill.title}} </button>
+		<div class="skill-description-container"> 
+            <p class="skill-description-text"> {{skill.description}} </p>
+        </div>
 	{% endfor %}
 </div>
 
