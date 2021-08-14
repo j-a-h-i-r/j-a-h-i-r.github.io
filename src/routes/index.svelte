@@ -1,29 +1,46 @@
 <script lang="ts">
+	import Links, * as Link from '$lib/links';
+	import PageCenter from '$lib/PageCenter.svelte';
+	import SocialLinks from '$lib/SocialLinks.svelte';
 </script>
 
-<div class="page">
-	<img src="profile_image.jpg" alt="Jahirul Islam" class="selfie" />
-	<h1>Hi, I'm Jahirul Islam</h1>
-	<h2>I'm a Software Engineer at Fiftytwo Digital Ltd</h2>
-</div>
+<PageCenter class="h-screen">
+	<!-- <div class="mt-16" /> -->
+	<div class="mb-2">
+		<img src="profile_image.jpg" alt="Jahirul Islam" class="selfie" />
+	</div>
+	<h1 class="font-bold text-4xl mb-2">Hi, I'm <span class="name">Jahirul Islam</span></h1>
+	<h3 class="text-gray-400 mb-2">
+		I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
+	</h3>
+
+	<div class="mb-4 mt-8">
+		<SocialLinks />
+	</div>
+
+	<div class="footer">
+		<Links>
+			<Link.About />
+			<Link.Blog />
+			<Link.Resume />
+		</Links>
+	</div>
+</PageCenter>
 
 <style lang="postcss">
-	.page {
-		@apply container mx-auto;
+	.name {
+		@apply underline cursor-pointer hover:bg-yellow-100 transition-colors duration-200 ease-in-out;
 	}
 
 	.selfie {
 		width: 125px;
 		height: 125px;
 		transition: all 0.2s;
-    @apply mb-2 rounded opacity-100;
-		/* margin-bottom: 25px; */
-		/* border-radius: 100%; */
-		/* opacity: 1; */
-  }
+		@apply rounded-full opacity-100;
+	}
 
 	.selfie:hover {
-    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.18), 0 0px 12px 0 rgba(0, 0, 0, 0.15);
-    opacity: 0.8;
-  }
+		box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.18), 0 0px 12px 0 rgba(0, 0, 0, 0.15);
+		opacity: 0.8;
+	}
 </style>

@@ -2,7 +2,7 @@
 	"name": "portfolio",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
+		"dev": "cross-env NODE_ENV=development svelte-kit dev",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
@@ -12,8 +12,11 @@
 	},
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.2.2",
+		"@fontsource/poppins": "^4.5.0",
+		"@fortawesome/free-brands-svg-icons": "^5.15.4",
 		"@lukeed/uuid": "^2.0.0",
-		"cookie": "^0.4.1"
+		"cookie": "^0.4.1",
+		"svelte-awesome": "^2.3.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.16",
@@ -21,22 +24,23 @@
 		"@types/cookie": "^0.4.0",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",
 		"@typescript-eslint/parser": "^4.19.0",
+		"autoprefixer": "^10.3.1",
+		"cross-env": "^7.0.3",
+		"cssnano": "^5.0.6",
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.2.0",
+		"postcss": "^8.3.6",
+		"postcss-load-config": "^3.1.0",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"sass": "^1.37.5",
 		"svelte": "^3.34.0",
 		"svelte-check": "^2.0.0",
 		"svelte-preprocess": "^4.7.4",
+		"tailwindcss": "^2.2.7",
 		"tslib": "^2.0.0",
-		"typescript": "^4.0.0",
-		"postcss": "^8.3.5",
-		"postcss-load-config": "^3.1.0",
-		"autoprefixer": "^10.3.1",
-		"cssnano": "^5.0.6",
-		"tailwindcss": "^2.2.4"
+		"typescript": "^4.0.0"
 	},
 	"type": "module"
 }
