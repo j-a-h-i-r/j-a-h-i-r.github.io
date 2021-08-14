@@ -1,5 +1,6 @@
 <script lang="ts">
-	import '../app.css';
+	import '../app.postcss';
+	// import '../app.scss';
 </script>
 
 <main>
