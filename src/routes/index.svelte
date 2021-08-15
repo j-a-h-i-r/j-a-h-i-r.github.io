@@ -1,16 +1,20 @@
 <script lang="ts">
+	import DarkToggle from '$lib/DarkToggle.svelte';
 	import Links, * as Link from '$lib/links';
 	import PageCenter from '$lib/PageCenter.svelte';
 	import SocialLinks from '$lib/SocialLinks.svelte';
-import WhatIDo from '$lib/WhatIDo.svelte';
 </script>
+
+<DarkToggle />
 
 <PageCenter class="h-screen px-4 items-center">
 	<!-- <div class="mt-16" /> -->
 	<div class="mb-2">
 		<img src="profile_image.jpg" alt="Jahirul Islam" class="selfie" />
 	</div>
-	<h1 class="font-bold text-2xl md:text-4xl mb-2">Hi, I'm <span class="name">Jahirul Islam</span></h1>
+	<h1 class="font-bold text-2xl md:text-4xl mb-2">
+		Hi, I'm <span class="name">Jahirul Islam</span>
+	</h1>
 	<h3 class="text-gray-400 text-center mb-2">
 		I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
 	</h3>
