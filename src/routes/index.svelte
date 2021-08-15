@@ -5,7 +5,7 @@
 import WhatIDo from '$lib/WhatIDo.svelte';
 </script>
 
-<PageCenter class="h-screen px-4">
+<PageCenter class="h-screen px-4 items-center">
 	<!-- <div class="mt-16" /> -->
 	<div class="mb-2">
 		<img src="profile_image.jpg" alt="Jahirul Islam" class="selfie" />
