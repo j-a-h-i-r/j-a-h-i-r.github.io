@@ -2,6 +2,7 @@
 	import Links, * as Link from '$lib/links';
 	import PageCenter from '$lib/PageCenter.svelte';
 	import SocialLinks from '$lib/SocialLinks.svelte';
+import WhatIDo from '$lib/WhatIDo.svelte';
 </script>
 
 <PageCenter class="h-screen px-4">
@@ -13,6 +14,10 @@
 	<h3 class="text-gray-400 text-center mb-2">
 		I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
 	</h3>
+
+	<!-- <div class="mt-2">
+		<WhatIDo />
+	</div> -->
 
 	<div class="mb-4 mt-8">
 		<SocialLinks />
