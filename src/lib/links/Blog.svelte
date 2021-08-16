@@ -1,1 +1,1 @@
-<a href="https://jahir.me/blog">Blog</a>
+<a href="https://jahir.me/blog" rel="external">Blog</a>
