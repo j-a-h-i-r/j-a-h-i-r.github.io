@@ -7,6 +7,10 @@
 
 <DarkToggle />
 
+<svelte:head>
+	<title> Website by Jahirul Islam </title>
+</svelte:head>
+
 <PageCenter class="h-screen items-center">
 	<!-- <div class="mt-16" /> -->
 	<div class="mb-2">
@@ -29,9 +33,9 @@
 
 	<div class="footer">
 		<Links>
-			<Link.About />
+			<!-- <Link.About />
 			<Link.Blog />
-			<Link.Resume />
+			<Link.Resume /> -->
 		</Links>
 	</div>
 </PageCenter>

@@ -5,12 +5,16 @@
 	import DarkToggle from '$lib/DarkToggle.svelte';
 </script>
 
+<svelte:head>
+	<title>About</title>
+</svelte:head>
+
 <PageCenter>
 	<div class="ml-auto mb-4 mt-2">
 		<Links>
-			<Link.Home />
+			<!-- <Link.Home />
 			<Link.Blog />
-			<Link.Resume />
+			<Link.Resume /> -->
 		</Links>
 	</div>
 
