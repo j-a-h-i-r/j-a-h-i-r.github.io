@@ -1,1 +1,1 @@
-<a href="/blog">Blog</a>
+<a href="/blog" rel="external">Blog</a>
