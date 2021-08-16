@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="mb-6">
-		<img class="profile-image" src="profile_image.jpg" alt="Jahirul Islam" />
+		<img class="profile-image" src="/profile_image.jpg" alt="Jahirul Islam" />
 	</div>
 
 	<div class="space-y-3">

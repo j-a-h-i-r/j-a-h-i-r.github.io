@@ -10,7 +10,7 @@
 <PageCenter class="h-screen items-center">
 	<!-- <div class="mt-16" /> -->
 	<div class="mb-2">
-		<img src="profile_image.jpg" alt="Jahirul Islam" class="selfie" />
+		<img src="/profile_image.jpg" alt="Jahirul Islam" class="selfie" />
 	</div>
 	<h1 class="font-bold text-2xl md:text-4xl mb-2">
 		Hi, I'm <span class="name">Jahirul Islam</span>
