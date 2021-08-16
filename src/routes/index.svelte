@@ -1,44 +1,41 @@
 <script lang="ts">
 	import DarkToggle from '$lib/DarkToggle.svelte';
-	import Links, * as Link from '$lib/links';
+	import Links from '$lib/links';
 	import PageCenter from '$lib/PageCenter.svelte';
 	import SocialLinks from '$lib/SocialLinks.svelte';
+	import Layout from '$lib/Layout.svelte';
 </script>
 
-<DarkToggle />
-
 <svelte:head>
-	<title> Website by Jahirul Islam </title>
+	<title>Website by Jahirul Islam</title>
 </svelte:head>
 
-<PageCenter class="h-screen items-center">
-	<!-- <div class="mt-16" /> -->
-	<div class="mb-2">
-		<img src="/profile_image.jpg" alt="Jahirul Islam" class="selfie" />
+<Layout>
+	<div slot="header" class="ml-auto">
+		<DarkToggle />
 	</div>
-	<h1 class="font-bold text-2xl md:text-4xl mb-2">
-		Hi, I'm <span class="name">Jahirul Islam</span>
-	</h1>
-	<h3 class="text-gray-400 text-center mb-2">
-		I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
-	</h3>
+	<div slot="content" class="flex flex-1">
+		<PageCenter class="items-center">
+			<div class="mb-2">
+				<img src="/profile_image.jpg" alt="Jahirul Islam" class="selfie" />
+			</div>
+			<h1 class="font-bold text-2xl md:text-4xl mb-2">
+				Hi, I'm <span class="name">Jahirul Islam</span>
+			</h1>
+			<h3 class="text-gray-400 text-center mb-2">
+				I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
+			</h3>
 
-	<!-- <div class="mt-2">
-		<WhatIDo />
-	</div> -->
+			<div class="mb-4 mt-8">
+				<SocialLinks />
+			</div>
 
-	<div class="mb-4 mt-8">
-		<SocialLinks />
+			<div class="footer">
+				<Links />
+			</div>
+		</PageCenter>
 	</div>
-
-	<div class="footer">
-		<Links>
-			<!-- <Link.About />
-			<Link.Blog />
-			<Link.Resume /> -->
-		</Links>
-	</div>
-</PageCenter>
+</Layout>
 
 <style lang="postcss">
 	.name {

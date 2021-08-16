@@ -6,6 +6,6 @@
 	}
 </script>
 
-<button class="absolute top-2 right-4" on:click={onClickToggle}>
+<button class="" on:click={onClickToggle}>
 	<Icon data={faMoon} />
 </button>
