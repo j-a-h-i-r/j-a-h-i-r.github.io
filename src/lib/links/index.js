@@ -6,4 +6,4 @@ import Resume from './Resume.svelte';
 import Links from './Links.svelte';
 
 export default Links;
-export { About, Home, Blog, Resume }
+export { About, Home, Blog, Resume };

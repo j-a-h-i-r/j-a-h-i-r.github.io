@@ -1,5 +1,5 @@
 <script lang="ts">
-import SkillPill from "./SkillPill.svelte";
+	import SkillPill from './SkillPill.svelte';
 
 	const skills = [
 		{
@@ -46,7 +46,7 @@ import SkillPill from "./SkillPill.svelte";
 </script>
 
 <div class="flex gap-x-3 gap-y-2 flex-wrap relative">
-  {#each skills as skill}
-    <SkillPill skill={skill} />
-  {/each}
+	{#each skills as skill}
+		<SkillPill {skill} />
+	{/each}
 </div>

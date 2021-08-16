@@ -5,8 +5,8 @@
 	const DURATION = 2000;
 	const DELAY = 500;
 
-  let doInterval;
-  let taskInterval;
+	let doInterval;
+	let taskInterval;
 
 	const tasks = [
 		{
@@ -42,43 +42,43 @@
 	let index = 0;
 	let task = tasks[index];
 
-  let doText = '';
-  let taskText = '';
+	let doText = '';
+	let taskText = '';
 
 	const interval = setInterval(() => {
 		index++;
 		if (index >= tasks.length) index = 0;
 		task = tasks[index];
-    // clearInterval(doInterval);
+		// clearInterval(doInterval);
 	}, INTERVAL);
 
-  $: runTypewriter(task) 
-  function runTypewriter(task: {do: string, task: string}) {
-    clearInterval(doInterval)
-    doInterval = runDoInterval(task.do);
-  }
+	$: runTypewriter(task);
+	function runTypewriter(task: { do: string; task: string }) {
+		clearInterval(doInterval);
+		doInterval = runDoInterval(task.do);
+	}
 
-  function runDoInterval(text: string) {
-    const intVal = (DURATION / text.length) / 2;
-    let i = 0;
-    let forward = true;
-    return setInterval(() => {
-      console.log(i, text.length, forward);
-      if (forward) {
-        doText = text.slice(0, i);
-      } else {
-        doText = text.slice(0, i - text.length);
-      }
-      i++;
-      if (i >= text.length) {
-        forward = false;
-      }
-    }, intVal);
-  }
+	function runDoInterval(text: string) {
+		const intVal = DURATION / text.length / 2;
+		let i = 0;
+		let forward = true;
+		return setInterval(() => {
+			console.log(i, text.length, forward);
+			if (forward) {
+				doText = text.slice(0, i);
+			} else {
+				doText = text.slice(0, i - text.length);
+			}
+			i++;
+			if (i >= text.length) {
+				forward = false;
+			}
+		}, intVal);
+	}
 
 	onDestroy(() => {
 		clearInterval(interval);
-    clearInterval(doInterval);
+		clearInterval(doInterval);
 	});
 </script>
 
