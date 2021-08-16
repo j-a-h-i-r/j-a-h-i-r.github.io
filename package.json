@@ -11,7 +11,6 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
-		"@fontsource/fira-mono": "^4.2.2",
 		"@fontsource/poppins": "^4.5.0",
 		"@fortawesome/free-brands-svg-icons": "^5.15.4",
 		"@fortawesome/free-solid-svg-icons": "^5.15.4",
