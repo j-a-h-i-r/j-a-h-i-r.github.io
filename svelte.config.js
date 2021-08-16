@@ -17,6 +17,12 @@ export default {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		})
+		}),
+		// ssr: false,
+		hydrate: false,
+		router: false,
+		// prerender: {
+		// 	enabled: true,
+		// }
 	}
 };
