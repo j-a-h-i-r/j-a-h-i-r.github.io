@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Website by Jahirul Islam</title>
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		
+		<title>About</title>
 
 		
 
+		<link rel="modulepreload" href="/./_app/start-e592fe6d.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-2f093726.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-f5316f67.js">
+		<link rel="modulepreload" href="/./_app/pages/about.svelte-7403467e.js">
+		<link rel="modulepreload" href="/./_app/chunks/Layout-7a467477.js">
 		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
 		<link rel="stylesheet" href="/./_app/assets/vendor-4b03a180.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-41cb2d70.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-881b5ad8.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/about.svelte-376b172d.css">
-		<link rel="stylesheet" href="/./_app/assets/PageCenter-497bf27e.css">
+		<link rel="stylesheet" href="/./_app/assets/Layout-3788afd6.css">
 
-		
+		<script type="module">
+			import { start } from "/./_app/start-e592fe6d.js";
+			start({
+				target: document.body,
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-f5316f67.js"),
+						import("/./_app/pages/about.svelte-7403467e.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/about",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div id="svelte">
 
 
-<main><div class="page-center  svelte-10g859i"><div class="ml-auto mb-4 mt-2"><div class="flex gap-6 md:gap-12"><a href="/">Home</a>
-	<a href="https://jahir.me/blog" rel="external">Blog</a>
-	<a href="https://drive.google.com/file/d/1_UHfuioKZfgKf51ew7gJVJhjpufC3vid/view?usp=sharing" target="_blank">Resume</a></div></div>
+<main>
 
-	<div class="mb-6"><img class="profile-image svelte-1l9b2f8" src="/profile_image.jpg" alt="Jahirul Islam"></div>
-
-	<div class="space-y-3"><div>I am Jahirul Islam, currently working as a Software Engineer at Fiftywo Digital Ltd.
-	Before that I was a Software Engineer at Enosis Solutions.
+<div class="flex flex-col h-screen px-4 py-2 max-w-screen-sm mx-auto"><div slot="header" class="ml-auto"><div class="flex ml-auto mb-4 mt-2 gap-4"><div class="flex gap-2 md:gap-6"><a href="/" class="header-link px-2 svelte-1ovykyl" target="">Home</a><a href="https://blog.jahir.me" class="header-link px-2 svelte-1ovykyl" target="_blank">Blog</a><a href="https://drive.google.com/file/d/1_UHfuioKZfgKf51ew7gJVJhjpufC3vid/view?usp=sharing" class="header-link px-2 svelte-1ovykyl" target="_blank">Resume</a>
 </div>
 
-<div>I graduated from East West University in Computer Science &amp; Engineering.</div>
-<div>This page will gradually get updated (hopefully) with new contents</div></div>
+    <button class=""><svg version="1.1" class="fa-icon  svelte-1b2zbdf" width="16" height="16" role="presentation" viewBox="0 0 512 512">
+    <path key="path-0" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+      
+      
+  </svg></button></div></div>
+	<div class="flex flex-1"><div slot="content"><div class="page-center  svelte-dfl0ms"><div class="mb-6"><img class="profile-image svelte-1l9b2f8" src="/profile_image.jpg" alt="Jahirul Islam"></div>
+
+	<div class="space-y-3"><div>I am Jahirul Islam, currently working as a Software Engineer at Fiftywo Digital
+			Ltd. Before that I was a Software Engineer at Enosis Solutions.
+		</div>
+
+		<div>I graduated from East West University in Computer Science &amp; Engineering.</div>
+		<div>This page will gradually get updated (hopefully) with new contents</div></div>
 
 	<div class="mt-6 mb-4"><h2 class="text-2xl font-bold">Skills</h2>
 
-<h3 class="text-gray-400 italic my-2">From most familiar to the least, sort of ..</h3>
+		<h3 class="text-gray-400 italic my-2">From most familiar to the least, sort of ..
+		</h3>
 
-<div><div class="flex gap-x-3 gap-y-2 flex-wrap relative"><div class="rounded shadow-sm bg-yellow-100 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer svelte-r1cwlt"><h4 class="skill-title border-b-2 border-blue-300 border-dotted">HTML</h4>
+		<div><div class="flex gap-x-3 gap-y-2 flex-wrap relative"><div class="rounded shadow-sm bg-yellow-100 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer svelte-r1cwlt"><h4 class="skill-title border-b-2 border-blue-300 border-dotted">HTML</h4>
 
 	<div class="skill-description bg-purple-300 left-0 px-2 py-2 rounded svelte-r1cwlt"><span class="bg-green-400 font-bold mr-1 px-2 rounded text-white">HTML</span>
 It&#39;s not much but it&#39;s honest work!</div>
@@ -75,7 +113,7 @@ Trying to up my CSS game. It&#39;s hard :(.</div>
 	<div class="skill-description bg-purple-300 left-0 px-2 py-2 rounded svelte-r1cwlt"><span class="bg-green-400 font-bold mr-1 px-2 rounded text-white">Kafka</span>
 Recently (Q4, 2020) started using Kafka. Built oauth component, connectors and streams application using Kafka.</div>
 </div></div></div></div>
-</div></main>
+</div></div></div></div></main>
 
 <footer></footer>
 
