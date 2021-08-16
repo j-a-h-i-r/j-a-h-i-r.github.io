@@ -2,9 +2,10 @@
 	import Links, * as Link from '$lib/links';
 	import Skills from '$lib/Skills.svelte';
 	import PageCenter from '$lib/PageCenter.svelte';
+	import DarkToggle from '$lib/DarkToggle.svelte';
 </script>
 
-<PageCenter class="px-4">
+<PageCenter>
 	<div class="ml-auto mb-4 mt-2">
 		<Links>
 			<Link.Home />

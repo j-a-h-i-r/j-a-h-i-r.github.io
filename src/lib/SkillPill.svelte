@@ -2,10 +2,10 @@
 	export let skill: { title: string; description: string };
 </script>
 
-<div class="rounded bg-yellow-100 px-4 py-2 skill-container">
-  <button class="skill-title border-b-2 border-blue-300 border-dotted">
+<div class="rounded shadow-sm bg-yellow-100 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer">
+  <h4 class="skill-title border-b-2 border-blue-300 border-dotted">
     {skill.title}
-  </button>
+  </h4>
 
   <div class="skill-description bg-purple-300 left-0 px-2 py-2 rounded">
     <span class="bg-green-400 font-bold mr-1 px-2 rounded text-white">{skill.title}</span>

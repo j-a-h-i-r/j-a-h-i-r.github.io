@@ -45,7 +45,7 @@ import SkillPill from "./SkillPill.svelte";
 	];
 </script>
 
-<div class="flex gap-3 flex-wrap relative">
+<div class="flex gap-x-3 gap-y-2 flex-wrap relative">
   {#each skills as skill}
     <SkillPill skill={skill} />
   {/each}

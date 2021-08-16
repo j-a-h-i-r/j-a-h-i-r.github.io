@@ -9,6 +9,6 @@
 
 <style lang="postcss">
 	.page-center {
-		@apply max-w-screen-sm py-2 mx-auto flex flex-col justify-center;
+		@apply max-w-screen-sm py-2 px-4 mx-auto flex flex-col justify-center;
 	}
 </style>
