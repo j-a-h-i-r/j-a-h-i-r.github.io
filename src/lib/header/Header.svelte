@@ -3,7 +3,7 @@
     import DarkToggle from '$lib/DarkToggle.svelte';
 </script>
 
-<div class="flex ml-auto mb-4 mt-2 gap-4">
+<div class="flex ml-auto gap-4">
     <Links />
 
     <DarkToggle />
