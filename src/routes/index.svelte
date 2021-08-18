@@ -11,10 +11,10 @@
 </svelte:head>
 
 <Layout>
-	<div slot="header" class="ml-auto">
+	<div slot="header" class="ml-auto z-10">
 		<DarkToggle />
 	</div>
-	<div slot="content" class="flex flex-1">
+	<div slot="content" class="flex flex-1 -mt-10">
 		<PageCenter class="items-center">
 			<div class="mb-2">
 				<img src="/profile_image.jpg" alt="Jahirul Islam" class="selfie" />
