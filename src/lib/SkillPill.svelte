@@ -3,14 +3,14 @@
 </script>
 
 <div
-	class="rounded shadow-sm bg-yellow-100 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer"
+	class="rounded shadow-sm bg-yellow-100 dark:bg-gray-600 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer"
 >
 	<h4 class="skill-title border-b-2 border-blue-300 border-dotted">
 		{skill.title}
 	</h4>
 
-	<div class="skill-description bg-purple-300 left-0 px-2 py-2 rounded">
-		<span class="bg-green-400 font-bold mr-1 px-2 rounded text-white">{skill.title}</span>
+	<div class="skill-description bg-purple-300 dark:bg-blue-900 left-0 px-2 py-2 rounded">
+		<span class="bg-green-400 dark:bg-gray-800 font-bold mr-1 px-2 rounded text-white">{skill.title}</span>
 		{skill.description}
 	</div>
 </div>

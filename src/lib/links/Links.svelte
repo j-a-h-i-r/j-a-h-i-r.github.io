@@ -14,13 +14,13 @@
 <div class="flex gap-2 md:gap-6">
 	{#each urls as url}
 		{#if $page.path != url.url}
-			<a href={url.url} class="header-link px-2" target="{url.newTab? '_blank': ''}">{url.text}</a>
+			<a href={url.url} class="header-link hover:bg-pink-100 dark:hover:bg-pink-900 px-2" target="{url.newTab? '_blank': ''}">{url.text}</a>
 		{/if}
 	{/each}
 </div>
 
 <style lang="postcss">
 	.header-link:hover {
-		@apply bg-pink-100 rounded;
+		@apply rounded;
 	}
 </style>
