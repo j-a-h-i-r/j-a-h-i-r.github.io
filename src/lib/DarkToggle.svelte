@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import Icon from 'svelte-awesome';
 
 	let theme = 'light';
-	
+
 	function onClickToggle() {
 		let newTheme;
 		if (document.documentElement.classList.contains('dark')) {
@@ -16,11 +16,11 @@ import { onMount } from 'svelte';
 		setTheme(newTheme);
 		theme = newTheme;
 	}
-	
+
 	onMount(() => {
 		theme = localStorage.getItem('theme') || 'light';
 		setTheme(theme);
-	})
+	});
 
 	function setTheme(theme: string) {
 		if (theme === 'light') document.documentElement.classList.remove('dark');

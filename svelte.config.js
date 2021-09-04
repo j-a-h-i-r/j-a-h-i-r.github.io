@@ -17,7 +17,7 @@ export default {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		}),
+		})
 		// hydrate: false,
 		// router: false,
 	}

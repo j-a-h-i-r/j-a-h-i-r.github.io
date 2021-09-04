@@ -10,7 +10,9 @@
 	</h4>
 
 	<div class="skill-description bg-purple-300 dark:bg-blue-900 left-0 px-2 py-2 rounded">
-		<span class="bg-green-400 dark:bg-gray-800 font-bold mr-1 px-2 rounded text-white">{skill.title}</span>
+		<span class="bg-green-400 dark:bg-gray-800 font-bold mr-1 px-2 rounded text-white"
+			>{skill.title}</span
+		>
 		{skill.description}
 	</div>
 </div>
