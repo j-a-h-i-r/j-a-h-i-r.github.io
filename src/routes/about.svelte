@@ -3,6 +3,7 @@
 	import PageCenter from '$lib/PageCenter.svelte';
 	import Header from '$lib/header/Header.svelte';
 	import Layout from '$lib/Layout.svelte';
+import Projects from '$lib/Projects.svelte';
 </script>
 
 <svelte:head>
@@ -39,6 +40,14 @@
 				<div>
 					<Skills />
 				</div>
+			</div>
+
+			<div class="mt-6 mb-4">
+				<h2 class="text-2xl font-bold"> Projects </h2>
+				<div class="my-2 grid md:grid-cols-2 gap-4">
+					<Projects />
+				</div>
+
 			</div>
 		</PageCenter>
 	</div>
