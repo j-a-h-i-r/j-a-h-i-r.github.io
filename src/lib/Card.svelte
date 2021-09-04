@@ -1,4 +1,4 @@
-<div class="px-4 py-2 bg-white rounded dark:bg-gray-600">
+<div class="px-4 py-2 shadow bg-white rounded dark:bg-gray-600">
     <div class:mb-1={$$slots.title}>
         <slot name="title" />
     </div>
