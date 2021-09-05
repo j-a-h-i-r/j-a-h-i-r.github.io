@@ -1,9 +1,9 @@
 <script lang="ts">
 	import DarkToggle from '$lib/DarkToggle.svelte';
 	import Links from '$lib/links';
-	import PageCenter from '$lib/PageCenter.svelte';
+	import PageCenter from '$lib/layout/PageCenter.svelte';
 	import SocialLinks from '$lib/SocialLinks.svelte';
-	import Layout from '$lib/Layout.svelte';
+	import Layout from '$lib/layout/Layout.svelte';
 </script>
 
 <svelte:head>

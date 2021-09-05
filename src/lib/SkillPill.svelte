@@ -5,7 +5,7 @@
 <div
 	class="rounded shadow-sm bg-yellow-100 dark:bg-gray-600 hover:bg-purple-100 px-4 py-2 skill-container cursor-pointer"
 >
-	<h4 class="skill-title border-b-2 border-blue-300 border-dotted">
+	<h4 class="border-b-2 border-blue-300 border-dotted">
 		{skill.title}
 	</h4>
 

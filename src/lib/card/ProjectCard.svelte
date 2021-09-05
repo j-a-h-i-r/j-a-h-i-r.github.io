@@ -17,7 +17,7 @@
 	<div slot="body">
 		{data.description}
 	</div>
-	<div slot="footer" class="flex flex-wrap gap-1">
+	<div slot="footer" class="flex flex-wrap gap-2">
 		{#each data.languages as language}
 			<span class="rounded-full bg-gray-300 dark:bg-gray-800 px-3"> {language} </span>
 		{/each}

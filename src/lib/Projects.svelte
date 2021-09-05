@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Card from './ProjectCard.svelte';
-	import type { ProjectCardProp } from './Card.type';
+	import ProjectCard from './card/ProjectCard.svelte';
+	import type { ProjectCardProp } from './card/Card.type';
 
 	const cards: ProjectCardProp[] = [
 		{
@@ -14,5 +14,5 @@
 </script>
 
 {#each cards as card}
-	<Card data={card} />
+	<ProjectCard data={card} />
 {/each}
