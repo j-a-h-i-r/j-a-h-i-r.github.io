@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
 	import Icon from 'svelte-awesome';
 	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 	import type { ProjectCardProp } from './Card.type';
