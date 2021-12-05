@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>Website by Jahirul Islam</title>
+	<meta name="description" content="Home page of the personal website of Jahirul Islam">
 </svelte:head>
 
 <Layout>
@@ -19,14 +20,14 @@
 			<div class="mb-2">
 				<img src="/profile_image.jpg" alt="Jahirul Islam" class="selfie" />
 			</div>
-			<h1 class="font-bold text-2xl md:text-4xl mb-2">
+			<h1 class="font-bold text-2xl md:text-4xl mb-2 mt-2">
 				Hi, I'm <span class="name hover:bg-yellow-100 dark:hover:bg-pink-900"
 					>Jahirul Islam</span
 				>
 			</h1>
-			<h3 class="text-gray-600 dark:text-gray-200 text-center mb-2">
+			<h2 class="text-gray-600 dark:text-gray-200 text-center mb-2">
 				I'm a <span class="font-bold">Software Engineer,</span> currently working on building EdTech applications
-			</h3>
+			</h2>
 
 			<div class="mb-4 mt-8">
 				<SocialLinks />

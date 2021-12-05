@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>About</title>
+	<meta name="description" content="About page of the personal website of Jahirul Islam">
 </svelte:head>
 
 <Layout>

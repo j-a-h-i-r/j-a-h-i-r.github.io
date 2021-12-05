@@ -5,10 +5,10 @@
 	import type { SocialLink } from 'src/types/SocialLinks.type';
 
 	const socialLinks: SocialLink[] = [
-		{ link: 'https://linkedin.com/in/jahir-ewubd', icon: faLinkedinIn },
-		{ link: 'https://github.com/j-a-h-i-r', icon: faGithub },
-		{ link: 'https://stackoverflow.com/users/4546980/jahir', icon: faStackOverflow },
-		{ link: 'mailto:jahir.ewubd@gmail.com', icon: faEnvelope }
+		{ link: 'https://linkedin.com/in/jahir-ewubd', icon: faLinkedinIn, iconAlt: "LinkedIn logo" },
+		{ link: 'https://github.com/j-a-h-i-r', icon: faGithub, iconAlt: "GitHub logo" },
+		{ link: 'https://stackoverflow.com/users/4546980/jahir', icon: faStackOverflow, iconAlt: "StackOverflow logo" },
+		{ link: 'mailto:jahir.ewubd@gmail.com', icon: faEnvelope, iconAlt: "Mail icon" }
 	];
 </script>
 
@@ -19,8 +19,9 @@
 				href={socialLink.link}
 				target="_blank"
 				class=""
+				rel="noopener"
 			>
-				<Icon data={socialLink.icon} class="hover:animate-bounce" />
+				<Icon data={socialLink.icon} class="hover:animate-bounce" label={socialLink.iconAlt} />
 			</a>
 		</li>
 	{/each}

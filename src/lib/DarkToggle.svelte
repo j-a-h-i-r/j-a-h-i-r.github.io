@@ -28,7 +28,7 @@
 	}
 </script>
 
-<button type="button" on:click={onClickToggle}>
+<button type="button" on:click={onClickToggle} name="Toggle color theme" aria-label="Toggle color theme">
 	{#if theme === 'light'}
 		<Icon data={faMoon} class="text-gray-700" />
 	{:else}

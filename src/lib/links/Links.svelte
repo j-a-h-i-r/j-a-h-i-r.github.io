@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	// console.log($page);
-
 	const urls: { url: string; text: string; newTab?: boolean }[] = [
 		{ url: '/', text: 'Home' },
 		{ url: '/about', text: 'About' },
 		{ url: 'https://blog.jahir.me', text: 'Blog', newTab: true },
 		{
-			url:
-				'https://drive.google.com/file/d/1_UHfuioKZfgKf51ew7gJVJhjpufC3vid/view?usp=sharing',
+			url: 'https://drive.google.com/file/d/1_UHfuioKZfgKf51ew7gJVJhjpufC3vid/view?usp=sharing',
 			text: 'Resume',
 			newTab: true
 		}
@@ -22,8 +19,11 @@
 			<a
 				href={url.url}
 				class="header-link hover:bg-pink-100 dark:hover:bg-pink-900 px-2"
-				target={url.newTab ? '_blank' : ''}>{url.text}</a
+				target={url.newTab ? '_blank' : ''}
+				rel={url.newTab? "noopener": undefined}
 			>
+				{url.text}
+			</a>
 		{/if}
 	{/each}
 </div>
