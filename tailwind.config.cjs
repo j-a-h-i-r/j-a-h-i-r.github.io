@@ -5,7 +5,12 @@ const config = {
 	theme: {
 		extend: {}
 	},
-	plugins: []
+	plugins: [],
+	variants: {
+		extend: {
+			animation: ['hover']
+		}
+	}
 };
 
 module.exports = config;

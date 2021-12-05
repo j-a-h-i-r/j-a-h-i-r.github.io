@@ -24,8 +24,8 @@
 					>Jahirul Islam</span
 				>
 			</h1>
-			<h3 class="text-gray-400 text-center mb-2">
-				I'm a <span class="font-bold">Software Engineer</span> at Fiftytwo Digital Ltd
+			<h3 class="text-gray-600 dark:text-gray-200 text-center mb-2">
+				I'm a <span class="font-bold">Software Engineer,</span> currently working on building EdTech applications
 			</h3>
 
 			<div class="mb-4 mt-8">
