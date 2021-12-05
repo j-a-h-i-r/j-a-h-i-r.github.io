@@ -10,7 +10,7 @@
 <Card>
 	<div slot="title" class="flex justify-between">
 		<h2 class="text-xl font-bold">{data.title}</h2>
-		<a href={data.projectUrl} target="_blank" class="text-blue-500 dark:text-blue-200">
+		<a href={data.projectUrl} rel="noopener" target="_blank" class="text-pink-800 dark:text-pink-200">
 			Demo <Icon data={faExternalLinkAlt} />
 		</a>
 	</div>
