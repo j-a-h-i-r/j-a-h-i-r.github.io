@@ -26,7 +26,7 @@
 				>
 			</h1>
 			<h2 class="text-gray-600 dark:text-gray-200 text-center mb-2">
-				I'm a <span class="font-bold">Software Engineer,</span> currently working on building EdTech applications
+				I'm a <span class="font-bold">Software Engineer,</span> currently working on large scale logs processing @aws
 			</h2>
 
 			<div class="mb-4 mt-8">
