@@ -16,13 +16,14 @@
 			description:
 				'Backend language (or runtime environment) of choice. 2 years of professional experience. More years of personal experience.'
 		},
+        {
+			title: 'Java',
+			description:
+				'Slowly warming up to it after trying to avoid it for a while!'
+		},
 		{
 			title: 'Angular(+JS)',
 			description: 'Frontend framework of choice. Moderate amount of experience.'
-		},
-		{
-			title: 'Git',
-			description: 'Duh!'
 		},
 		{
 			title: 'Python',
@@ -33,10 +34,6 @@
 			title: 'PostgresSQL, MySQL',
 			description:
 				'Most of my DBMS experience is in RDBMS. Has experience of designing schema from scratch.'
-		},
-		{
-			title: 'CSS',
-			description: `Trying to up my CSS game. It's hard :(.`
 		},
 		{
 			title: 'Kafka',
