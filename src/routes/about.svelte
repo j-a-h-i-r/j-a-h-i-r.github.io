@@ -24,14 +24,14 @@
 			<div class="space-y-4">
 				<p>
 					I am Jahirul Islam, a Software Engineer from <span class="border-b-2 border-pink-600">Dhaka, Bangladesh.</span> 
-					I have about 3 three years of experience working with Web Technologies.
+					I've been working full time building softwares since 2019!
 				</p>
 				<p>
 					In my career I have worked on building solutions for various domains, such as ERP, retail solution, etc.
-					Right now I'm working on building applications for EdTech.
+					Right now I'm working on large scale logs processing.
 				</p>
 
-				<p>I graduated from East West University in Computer Science & Engineering.</p>
+				<p>I've graduated from East West University in Computer Science & Engineering.</p>
 				<p>This page will gradually get updated (hopefully) with new contents</p>
 			</div>
 
