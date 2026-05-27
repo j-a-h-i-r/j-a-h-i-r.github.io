@@ -28,7 +28,7 @@
 				</p>
 				<p>
 					In my career I have worked on building solutions for various domains, such as ERP, retail solution, etc.
-					Right now I'm working on large scale logs processing.
+					Right now I work as a founding engineer at ForgentAI, where we build AI solutions for public procurements.
 				</p>
 
 				<p>I've graduated from East West University in Computer Science & Engineering.</p>
