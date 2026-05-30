@@ -1,9 +1,7 @@
 <script>
-	import Skills from '$lib/Skills.svelte';
 	import PageCenter from '$lib/layout/PageCenter.svelte';
 	import Header from '$lib/header/Header.svelte';
 	import Layout from '$lib/layout/Layout.svelte';
-	import Projects from '$lib/Projects.svelte';
 </script>
 
 <svelte:head>
@@ -23,8 +21,8 @@
 
 			<div class="space-y-4">
 				<p>
-					I am Jahirul Islam, a Software Engineer from <span class="border-b-2 border-pink-600">Dhaka, Bangladesh.</span> 
-					I've been working full time building softwares since 2019!
+					I am Jahirul Islam, a Software Engineer based in <span class="border-b-2 border-pink-600">Berlin, Germany.</span>
+					I have around 7 years of experience building software professionally.
 				</p>
 				<p>
 					In my career I have worked on building solutions for various domains, such as ERP, retail solution, etc.
@@ -32,26 +30,7 @@
 				</p>
 
 				<p>I've graduated from East West University in Computer Science & Engineering.</p>
-				<p>This page will gradually get updated (hopefully) with new contents</p>
-			</div>
-
-			<div class="mt-6 mb-4">
-				<h2 class="text-2xl font-bold">Know-hows</h2>
-
-				<h3 class="text-gray-500 dark:text-gray-300 italic my-2">
-					From most familiar to the least, sort of ..
-				</h3>
-
-				<div>
-					<Skills />
-				</div>
-			</div>
-
-			<div class="mt-6 mb-4">
-				<h2 class="text-2xl font-bold mb-3">Projects</h2>
-				<div class="grid md:grid-cols-2 gap-4">
-					<Projects />
-				</div>
+				<p>This page will gradually get updated (hopefully) with new contents.</p>
 			</div>
 		</PageCenter>
 	</div>
